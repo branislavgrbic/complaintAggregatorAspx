@@ -142,7 +142,7 @@ namespace WebApplication1
                 catch (Exception ex)
                 {
                     // Response.End() Throws exception!!!
-                    Response.Write("Can not open connection ! " + ex.ToString());
+                 //   Response.Write("Can not open connection ! " + ex.ToString());
                 }
                
                 finally
@@ -314,53 +314,53 @@ Response.Write("Exception" + BlueScreen.ToString());
 }*/
 
                     // Save image to Azure
-                    try
-                    {
-                      //  Response.Write("Key: " + ConfigurationManager.AppSettings["StorageConnectionString"]);
-                        /*
-                                           // Retrieve storage account from connection string.                    
-                                           CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
-                                               ConfigurationManager.ConnectionStrings["StorageConnectionString"].ConnectionString);
+                    //1  try
+                    //1    {
+                    //  Response.Write("Key: " + ConfigurationManager.AppSettings["StorageConnectionString"]);
+                    /*
+                                       // Retrieve storage account from connection string.                    
+                                       CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
+                                           ConfigurationManager.ConnectionStrings["StorageConnectionString"].ConnectionString);
                        
                         
-                                           // Create the blob client.
-                                           CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
+                                       // Create the blob client.
+                                       CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
 
-                                           // Retrieve reference to a previously created container.
-                                           CloudBlobContainer container = blobClient.GetContainerReference("mycontainer");
+                                       // Retrieve reference to a previously created container.
+                                       CloudBlobContainer container = blobClient.GetContainerReference("mycontainer");
 
-                                           // Retrieve reference to a blob named "myblob".
-                                           CloudBlockBlob blockBlob = container.GetBlockBlobReference("myblob");
+                                       // Retrieve reference to a blob named "myblob".
+                                       CloudBlockBlob blockBlob = container.GetBlockBlobReference("myblob");
 
-                                           // Create or overwrite the "myblob" blob with contents from a local file.
-                                           using (var fileStream = System.IO.File.OpenRead(@"c:\test1.jpg"))
-                                           {
-                                               blockBlob.UploadFromStream(fileStream);
-                                           } */
+                                       // Create or overwrite the "myblob" blob with contents from a local file.
+                                       using (var fileStream = System.IO.File.OpenRead(@"c:\test1.jpg"))
+                                       {
+                                           blockBlob.UploadFromStream(fileStream);
+                                       } */
 
-                    }
-                    catch (Exception e22)
-                    {
-                        Response.Write("Error storage1 :" + e22.ToString());
-                    }
+                    //  1     }
+                    //  1      catch (Exception e22)
+                    //  1     {
+                    ///  1          Response.Write("Error storage1 :" + e22.ToString());
+                    //   1     }
+                    //1      }
+                    // 1     else 
+                    // 1    {
+                    // 1       try
+                    // 1      {
+                    // CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
+                    //      CloudConfigurationManager.GetSetting("StorageConnectionString"));
+
+                    // Response.Write("Key: " + ConfigurationManager.AppSettings["StorageConnectionString"]);
+                    // Define the connection-string with your values
+
+                    // 1       }
+                    // 1       catch (Exception e22)
+                    // 1       {
+                    // 1            Response.Write("Error storage2 :" + e22.ToString());
+                    //1          }
+                    //1       }
                 }
-                else 
-                {
-                    try
-                    {
-                       // CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
-                       //      CloudConfigurationManager.GetSetting("StorageConnectionString"));
-    
-                       // Response.Write("Key: " + ConfigurationManager.AppSettings["StorageConnectionString"]);
-                        // Define the connection-string with your values
-                            
-                    }
-                    catch (Exception e22)
-                    {
-                        Response.Write("Error storage2 :" + e22.ToString());
-                    }
-                }
-
         }
 
 
